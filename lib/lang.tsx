@@ -1,10 +1,11 @@
 // lib/lang.tsx
 //
-// Tiny client-side language toggle. Default is EN (decided 2026-05-09)
-// because the nav reads cleaner without TH/EN mixed labels, and
-// international visitors / recruiters land on something familiar.
-// Returning Thai users keep their pick because we persist to
-// localStorage. No router param, no SSR shenanigans; pages are static.
+// Tiny client-side language toggle. Default is TH because the creator
+// is Thai, content is written TH-first, and the bulk of the audience
+// reads Thai. (Briefly tried EN as default 2026-05-09 — reverted same
+// day; it felt off for a TH-first site.) Returning users keep their
+// chosen language because we persist to localStorage. No router param,
+// no SSR shenanigans; pages are static.
 
 'use client';
 
@@ -30,8 +31,8 @@ const LangContext = createContext<LangContextValue | null>(null);
 const STORAGE_KEY = 'kob-site-lang';
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  // SSR-safe: start with EN (default), hydrate from localStorage on mount.
-  const [lang, setLangState] = useState<Lang>('en');
+  // SSR-safe: start with TH (default), hydrate from localStorage on mount.
+  const [lang, setLangState] = useState<Lang>('th');
 
   useEffect(() => {
     try {
