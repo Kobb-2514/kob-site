@@ -57,7 +57,7 @@ export default function Home() {
           <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">
             {t({
               th: 'เภสัชกรที่หลงเข้าวงการเขียน code มาได้สักพัก อยากทำอะไรที่มากกว่าการจ่ายยา DrugBox เป็นแอพแรก และแอพ MedSticker ที่กำลังทำอยู่',
-              en: 'a hospital pharmacist who got pulled into building software. wanted to do more than just dispense — DrugBox is the first app, MedSticker is what i\u2019m building next.',
+              en: 'a pharmacist who got pulled into writing code for a while now. wanted to do more than just dispense — DrugBox is the first app, MedSticker is the one i\u2019m building next.',
             })}
           </p>
           <p className="mt-4 text-base text-gray-500">
