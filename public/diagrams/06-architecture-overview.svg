@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="arch-title arch-desc" font-family="'Itim', 'Comic Sans MS', 'Marker Felt', 'Sukhumvit Set', 'Sarabun', 'Tahoma', cursive, sans-serif" style="background:#ffffff;">
+  <title id="arch-title">DrugBox — สถาปัตยกรรมระบบ (Architecture overview)</title>
+  <desc id="arch-desc">iOS app และ Web ทั้ง 2 ตัวคุยกับ Firebase ที่อยู่ตรงกลาง</desc>
+  <defs>
+    <filter id="arch-rough" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="4" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5"/></filter>
+    <filter id="arch-rough-light" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="2" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2"/></filter>
+    <marker id="arch-arrow" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="11" markerHeight="11" orient="auto"><path d="M0,1 L13,7 L0,13 L4,7 z" fill="#1a202c"/></marker>
+    <marker id="arch-arrow-amber" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="11" markerHeight="11" orient="auto"><path d="M0,1 L13,7 L0,13 L4,7 z" fill="#d97706"/></marker>
+  </defs>
+  <g transform="translate(50, 65)">
+    <text font-size="32" font-weight="800" fill="#1a202c"><tspan fill="#0d9488">สถาปัตยกรรม</tspan>ระบบ DrugBox</text>
+    <text y="32" font-size="14" fill="#94a3b8" font-style="italic">Architecture overview · how the pieces fit together</text>
+    <text y="58" font-size="14" fill="#475569" font-style="italic">2 client (iOS + เว็บ) · Firebase backend · External auth (Apple, Google)</text>
+  </g>
+  <g transform="translate(1100, 70)" filter="url(#arch-rough-light)">
+    <rect x="-30" y="-30" width="60" height="60" rx="12" fill="#1e3a8a" stroke="#1a202c" stroke-width="2"/>
+    <rect x="-17" y="-7" width="34" height="24" rx="2" fill="#ffffff"/>
+    <path d="M -8 -7 L -8 -12 Q -8 -15 -5 -15 L 5 -15 Q 8 -15 8 -12 L 8 -7" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="0" y="11" text-anchor="middle" font-size="17" font-weight="900" font-style="italic" fill="#1e3a8a" font-family="Georgia, serif">Rx</text>
+    <circle cx="22" cy="-22" r="9" fill="#ef4444" stroke="#1a202c" stroke-width="1"/>
+  </g>
+  <text x="60" y="180" font-size="11" font-weight="700" fill="#94a3b8" letter-spacing="1.5">CLIENTS · ผู้ใช้สัมผัสที่นี่</text>
+  <g><rect x="60" y="195" width="220" height="120" rx="14" fill="#dbeafe" stroke="#1a202c" stroke-width="2" filter="url(#arch-rough)"/><text x="80" y="225" font-size="18" font-weight="700" fill="#1a202c">📱 iOS App</text><text x="80" y="245" font-size="11" fill="#475569" font-style="italic">v1.2 Build 12 · Swift / SwiftUI</text><line x1="80" y1="255" x2="260" y2="255" stroke="#1a202c" stroke-opacity="0.2"/><text x="80" y="274" font-size="11" fill="#475569">Login · กล่องยา · สลับ</text><text x="80" y="290" font-size="11" fill="#475569">ตรวจ · สถิติ · ตั้งค่า</text><text x="80" y="307" font-size="10" fill="#94a3b8" font-style="italic">QR scan · push notifications</text></g>
+  <g><rect x="320" y="195" width="220" height="120" rx="14" fill="#ccfbf1" stroke="#1a202c" stroke-width="2" filter="url(#arch-rough)"/><text x="340" y="225" font-size="18" font-weight="700" fill="#1a202c">💻 Web App</text><text x="340" y="245" font-size="11" fill="#475569" font-style="italic">Next.js 14 · drugboxcare.com</text><line x1="340" y1="255" x2="520" y2="255" stroke="#1a202c" stroke-opacity="0.2"/><text x="340" y="274" font-size="11" fill="#475569">Dashboard · กล่อง · สมาชิก</text><text x="340" y="290" font-size="11" fill="#475569">คลังยา · audit · สถิติ · แผนที่</text><text x="340" y="307" font-size="10" fill="#94a3b8" font-style="italic">PWA · Firebase App Hosting</text></g>
+  <text x="600" y="180" font-size="11" font-weight="700" fill="#94a3b8" letter-spacing="1.5">EXTERNAL · ผู้ให้บริการ OAuth</text>
+  <g>
+    <rect x="600" y="195" width="280" height="120" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="5,3" filter="url(#arch-rough-light)"/>
+    <text x="620" y="220" font-size="13" font-weight="600" fill="#475569">External OAuth providers</text>
+    <g transform="translate(620, 232)"><circle cx="14" cy="14" r="14" fill="#000"/><text x="40" y="19" font-size="13" fill="#1a202c">Sign in with Apple</text></g>
+    <g transform="translate(620, 270)"><circle cx="14" cy="14" r="14" fill="#fff" stroke="#cbd5e1"/><text x="14" y="19" text-anchor="middle" font-size="14" font-weight="700" fill="#4285F4">G</text><text x="40" y="19" font-size="13" fill="#1a202c">Sign in with Google</text></g>
+  </g>
+  <g transform="translate(320, 360)">
+    <rect x="0" y="0" width="280" height="80" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2" filter="url(#arch-rough)"/>
+    <text x="20" y="28" font-size="16" font-weight="700" fill="#1a202c">🔐 Firebase Auth</text>
+    <text x="20" y="48" font-size="11" fill="#475569" font-style="italic">Email · Apple · Google providers</text>
+    <text x="20" y="64" font-size="10" fill="#94a3b8" font-style="italic">auto-link by verified email</text>
+  </g>
+  <text x="60" y="475" font-size="11" font-weight="700" fill="#94a3b8" letter-spacing="1.5">FIREBASE BACKEND</text>
+  <g>
+    <rect x="60" y="490" width="280" height="160" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2" filter="url(#arch-rough)"/>
+    <text x="80" y="518" font-size="16" font-weight="700" fill="#1a202c">📁 Firestore</text>
+    <text x="80" y="536" font-size="11" fill="#475569" font-style="italic">ฐานข้อมูล real-time NoSQL</text>
+    <line x1="80" y1="546" x2="320" y2="546" stroke="#d97706" stroke-opacity="0.3"/>
+    <text x="80" y="566" font-size="11" fill="#475569">• /users · /organizations</text>
+    <text x="80" y="582" font-size="11" fill="#475569">• /drugboxes + /items</text>
+    <text x="80" y="598" font-size="11" fill="#475569">• /boxMovements · /drugTransactions</text>
+    <text x="80" y="614" font-size="11" fill="#475569">• /logs · /memberlogs</text>
+    <text x="80" y="630" font-size="11" fill="#475569">• /locationCatalog · /drugCatalog</text>
+    <text x="80" y="646" font-size="9" fill="#94a3b8" font-style="italic">guarded by firestore.rules</text>
+  </g>
+  <g>
+    <rect x="380" y="490" width="280" height="160" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2" filter="url(#arch-rough)"/>
+    <text x="400" y="518" font-size="16" font-weight="700" fill="#1a202c">⚙️ Cloud Functions</text>
+    <text x="400" y="536" font-size="11" fill="#475569" font-style="italic">Node.js · asia-southeast1</text>
+    <line x1="400" y1="546" x2="640" y2="546" stroke="#d97706" stroke-opacity="0.3"/>
+    <text x="400" y="566" font-size="11" font-weight="600" fill="#1a202c">⏰ Scheduled (cron)</text>
+    <text x="400" y="582" font-size="10" fill="#475569">  dailyExpiryCheck (Tue–Sun)</text>
+    <text x="400" y="596" font-size="10" fill="#475569">  weeklyExpiryReport (Mon)</text>
+    <text x="400" y="612" font-size="11" font-weight="600" fill="#1a202c">🔔 Triggers</text>
+    <text x="400" y="628" font-size="10" fill="#475569">  onBoxMovementCreated</text>
+    <text x="400" y="644" font-size="10" fill="#475569" font-style="italic">  callable: deleteUserAccount, …</text>
+  </g>
+  <g>
+    <rect x="700" y="490" width="280" height="160" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2" filter="url(#arch-rough)"/>
+    <text x="720" y="518" font-size="16" font-weight="700" fill="#1a202c">📨 Cloud Messaging</text>
+    <text x="720" y="536" font-size="11" fill="#475569" font-style="italic">Push notifications (FCM)</text>
+    <line x1="720" y1="546" x2="960" y2="546" stroke="#d97706" stroke-opacity="0.3"/>
+    <text x="720" y="568" font-size="11" fill="#475569">• ทุกวัน 08:00 (เฉพาะหมดอายุ)</text>
+    <text x="720" y="584" font-size="11" fill="#475569">• จันทร์ 08:00 (สรุปสัปดาห์</text>
+    <text x="720" y="599" font-size="11" fill="#475569">  + หมดอายุ + ใกล้หมด)</text>
+    <text x="720" y="618" font-size="11" fill="#475569">• แจ้งเตือนรอบตรวจ</text>
+    <text x="720" y="640" font-size="9" fill="#94a3b8" font-style="italic">FCM tokens ใน /users/{uid}/fcmTokens</text>
+  </g>
+  <g stroke="#1a202c" stroke-width="1.5" fill="none" stroke-dasharray="6,4" filter="url(#arch-rough)">
+    <line x1="170" y1="315" x2="380" y2="360" marker-end="url(#arch-arrow)" marker-start="url(#arch-arrow)"/>
+    <line x1="430" y1="315" x2="450" y2="360" marker-end="url(#arch-arrow)" marker-start="url(#arch-arrow)"/>
+  </g>
+  <g stroke="#94a3b8" stroke-width="1.2" fill="none" stroke-dasharray="4,3" filter="url(#arch-rough-light)">
+    <line x1="600" y1="285" x2="540" y2="360" marker-end="url(#arch-arrow)"/>
+  </g>
+  <g stroke="#1a202c" stroke-width="1.5" fill="none" stroke-dasharray="6,4" filter="url(#arch-rough)">
+    <line x1="170" y1="315" x2="170" y2="490" marker-end="url(#arch-arrow)" marker-start="url(#arch-arrow)"/>
+    <path d="M 320 315 Q 230 400 240 490" marker-end="url(#arch-arrow)" marker-start="url(#arch-arrow)"/>
+  </g>
+  <line x1="380" y1="440" x2="240" y2="490" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arch-arrow)"/>
+  <g stroke="#1a202c" stroke-width="1.5" fill="none" stroke-dasharray="6,4" filter="url(#arch-rough)">
+    <line x1="340" y1="555" x2="380" y2="555" marker-end="url(#arch-arrow)"/>
+    <line x1="380" y1="595" x2="340" y2="595" marker-end="url(#arch-arrow)"/>
+  </g>
+  <line x1="660" y1="570" x2="700" y2="570" stroke="#1a202c" stroke-width="1.5" fill="none" stroke-dasharray="6,4" filter="url(#arch-rough)" marker-end="url(#arch-arrow)"/>
+  <path d="M 840 490 Q 840 380 280 250" fill="none" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arch-arrow-amber)"/>
+  <text x="780" y="370" font-size="10" fill="#d97706" font-style="italic" transform="rotate(-50 780 370)">push notifications</text>
+  <g transform="translate(60, 670)">
+    <rect x="0" y="0" width="14" height="14" rx="3" fill="#dbeafe" stroke="#1a202c" stroke-width="1"/>
+    <text x="20" y="11" font-size="11" fill="#475569">clients</text>
+    <rect x="100" y="0" width="14" height="14" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+    <text x="120" y="11" font-size="11" fill="#475569">Firebase services</text>
+    <rect x="260" y="0" width="14" height="14" rx="3" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="280" y="11" font-size="11" fill="#475569">external (managed by Apple/Google)</text>
+    <line x1="490" y1="7" x2="510" y2="7" stroke="#1a202c" stroke-width="1.5"/>
+    <text x="516" y="11" font-size="11" fill="#475569">data flow</text>
+    <line x1="600" y1="7" x2="620" y2="7" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <text x="626" y="11" font-size="11" fill="#475569">push notification</text>
+  </g>
+  <text x="1160" y="690" text-anchor="end" font-size="11" font-style="italic" fill="#94a3b8">DrugBox · by adisak_kob · drugboxcare.com</text>
+</svg>

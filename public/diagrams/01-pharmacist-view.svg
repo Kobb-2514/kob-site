@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="thf-title thf-desc" font-family="'Itim', 'Comic Sans MS', 'Marker Felt', 'Sukhumvit Set', 'Sarabun', 'Tahoma', cursive, sans-serif" style="background:#ffffff;">
+  <title id="thf-title">DrugBox ทำอะไรให้เภสัชกรบ้าง — แผนที่ฟีเจอร์</title>
+  <desc id="thf-desc">DrugBox อยู่ตรงกลาง รอบๆ คือฟีเจอร์ที่ทำเสร็จแล้ว 8 อย่าง พร้อม ✓ และมี cloud คำถาม 2 อันทางซ้าย</desc>
+  <defs>
+    <filter id="thf-rough" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="4" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5"/></filter>
+    <filter id="thf-rough-light" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="2" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2"/></filter>
+    <filter id="thf-cloud" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="11" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="6"/></filter>
+    <marker id="thf-arrow" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="11" markerHeight="11" orient="auto"><path d="M0,1 L13,7 L0,13 L4,7 z" fill="#1a202c"/></marker>
+  </defs>
+  <g transform="translate(50, 110)">
+    <text font-size="38" font-weight="800" fill="#1a202c"><tspan fill="#0d9488">DrugBox</tspan> ทำอะไร</text>
+    <text y="50" font-size="38" font-weight="800" fill="#1a202c">ให้</text>
+    <rect x="59" y="74" width="220" height="42" fill="#fde68a" filter="url(#thf-rough)" opacity="0.85"/>
+    <text y="105" font-size="38" font-weight="800" fill="#1a202c"><tspan x="65">เภสัชกร</tspan>บ้าง?</text>
+    <text y="148" font-size="14" fill="#475569" font-style="italic">หัวใจหลัก + 7 ฟีเจอร์สนับสนุน</text>
+    <text y="168" font-size="13" fill="#94a3b8" font-style="italic">What DrugBox does for the pharmacist</text>
+    <text y="190" font-size="12" fill="#94a3b8" font-style="italic">v1.2 Build 12 · Apple + Google + อีเมล</text>
+  </g>
+  <g transform="translate(1100, 95)" filter="url(#thf-rough-light)">
+    <rect x="-38" y="-38" width="76" height="76" rx="16" fill="#1e3a8a" stroke="#1a202c" stroke-width="2"/>
+    <rect x="-22" y="-10" width="44" height="32" rx="3" fill="#ffffff"/>
+    <path d="M -10 -10 L -10 -16 Q -10 -20 -6 -20 L 6 -20 Q 10 -20 10 -16 L 10 -10" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <text x="0" y="13" text-anchor="middle" font-size="22" font-weight="900" font-style="italic" fill="#1e3a8a" font-family="Georgia, serif">Rx</text>
+    <circle cx="28" cy="-28" r="11" fill="#ef4444" stroke="#1a202c" stroke-width="1"/>
+    <path d="M 25 -32 Q 25 -34 28 -34 Q 31 -34 31 -32 L 31 -28 Q 32 -27 33 -26 L 23 -26 Q 24 -27 25 -28 z" fill="#ffffff"/>
+    <circle cx="28" cy="-24" r="1.5" fill="#ffffff"/>
+  </g>
+  <text x="650" y="100" font-size="13" fill="#1a202c" font-style="italic">สิ่งที่แอปทำได้แล้ววันนี้ →</text>
+  <g transform="translate(800, 380)">
+    <rect x="-90" y="-50" width="180" height="100" rx="20" fill="#ffd9b3" stroke="#1a202c" stroke-width="2.5" filter="url(#thf-rough)"/>
+    <text x="0" y="-12" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">📦 DrugBox</text>
+    <text x="0" y="10" text-anchor="middle" font-size="13" fill="#475569" font-style="italic">ตัวแอป</text>
+    <text x="0" y="32" text-anchor="middle" font-size="11" fill="#94a3b8">iOS + เว็บ · ไทย/EN</text>
+  </g>
+  <g><rect x="500" y="160" width="170" height="70" rx="14" fill="#e9d5ff" stroke="#1a202c" stroke-width="1.8" filter="url(#thf-rough)"/><text x="585" y="190" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">🔐 เข้าสู่ระบบ</text><text x="585" y="210" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">Apple · Google · อีเมล</text><text x="660" y="160" font-size="22" font-weight="900" fill="#16a34a">✓</text></g>
+  <g><rect x="700" y="200" width="170" height="70" rx="14" fill="#fef9c3" stroke="#1a202c" stroke-width="1.8" filter="url(#thf-rough)"/><text x="785" y="230" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">📋 รายการกล่องยา</text><text x="785" y="250" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">กรอง · ค้นหา · สแกน QR</text><text x="860" y="200" font-size="22" font-weight="900" fill="#16a34a">✓</text></g>
+  <g><rect x="920" y="240" width="190" height="80" rx="14" fill="#fed7aa" stroke="#1a202c" stroke-width="2.5" filter="url(#thf-rough)"/><text x="1015" y="268" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">🔄 สลับ · รับคืน · จ่าย</text><text x="1015" y="288" text-anchor="middle" font-size="11" fill="#9a3412" font-style="italic">หัวใจของแอป</text><text x="1015" y="306" text-anchor="middle" font-size="10" fill="#475569">3 รูปแบบ · pending → ตรวจ</text><text x="1100" y="240" font-size="22" font-weight="900" fill="#16a34a">✓</text></g>
+  <g><rect x="970" y="380" width="170" height="70" rx="14" fill="#bbf7d0" stroke="#1a202c" stroke-width="1.8" filter="url(#thf-rough)"/><text x="1055" y="408" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">✓ ตรวจรอบ</text><text x="1055" y="428" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">ตามรอบ · เคลียร์ pending</text><text x="1130" y="380" font-size="22" font-weight="900" fill="#16a34a">✓</text></g>
+  <g><rect x="900" y="490" width="170" height="70" rx="14" fill="#bfdbfe" stroke="#1a202c" stroke-width="1.8" filter="url(#thf-rough)"/><text x="985" y="518" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">🔔 แจ้งเตือนยาหมดอายุ</text><text x="985" y="538" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">push · รายวัน · รายสัปดาห์</text><text x="1060" y="490" font-size="22" font-weight="900" fill="#16a34a">✓</text></g>
+  <g><rect x="700" y="540" width="170" height="70" rx="14" fill="#fef9c3" stroke="#1a202c" stroke-width="1.8" filter="url(#thf-rough)"/><text x="785" y="568" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">📊 สถิติ &amp; รายงาน</text><text x="785" y="588" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">dot grid · export PDF</text><text x="860" y="540" font-size="22" font-weight="900" fill="#16a34a">✓</text></g>
+  <g><rect x="500" y="540" width="170" height="70" rx="14" fill="#fbcfe8" stroke="#1a202c" stroke-width="1.8" filter="url(#thf-rough)"/><text x="585" y="568" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">👥 ทีม / สมาชิก</text><text x="585" y="588" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">เชิญ · บทบาท · ลบ</text><text x="660" y="540" font-size="22" font-weight="900" fill="#16a34a">✓</text></g>
+  <g><rect x="500" y="350" width="170" height="70" rx="14" fill="#e0e7ff" stroke="#1a202c" stroke-width="1.8" filter="url(#thf-rough)"/><text x="585" y="380" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">⚙️ ตั้งค่า</text><text x="585" y="400" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">privacy · ToS · ลบบัญชี</text><text x="660" y="350" font-size="22" font-weight="900" fill="#16a34a">✓</text></g>
+  <g stroke="#1a202c" stroke-width="1.4" fill="none" stroke-dasharray="6,4" filter="url(#thf-rough)">
+    <line x1="720" y1="345" x2="666" y2="232" marker-end="url(#thf-arrow)"/>
+    <line x1="790" y1="330" x2="785" y2="272" marker-end="url(#thf-arrow)"/>
+    <line x1="880" y1="345" x2="922" y2="282" marker-end="url(#thf-arrow)"/>
+    <line x1="890" y1="400" x2="966" y2="412" marker-end="url(#thf-arrow)"/>
+    <line x1="880" y1="415" x2="908" y2="486" marker-end="url(#thf-arrow)"/>
+    <line x1="790" y1="430" x2="785" y2="535" marker-end="url(#thf-arrow)"/>
+    <line x1="710" y1="430" x2="560" y2="532" marker-end="url(#thf-arrow)"/>
+    <line x1="710" y1="385" x2="673" y2="385" marker-end="url(#thf-arrow)"/>
+  </g>
+  <g transform="translate(420, 320)"><ellipse cx="0" cy="0" rx="55" ry="34" fill="#bfdbfe" stroke="#1a202c" stroke-width="1.5" filter="url(#thf-cloud)" opacity="0.85"/><text x="0" y="-2" text-anchor="middle" font-size="22" font-weight="900" fill="#1a202c" font-family="serif">?</text><text x="0" y="16" text-anchor="middle" font-size="9" fill="#1a202c" font-style="italic">หลาย org?</text></g>
+  <g transform="translate(420, 450)"><ellipse cx="0" cy="0" rx="55" ry="34" fill="#bbf7d0" stroke="#1a202c" stroke-width="1.5" filter="url(#thf-cloud)" opacity="0.85"/><text x="0" y="-2" text-anchor="middle" font-size="22" font-weight="900" fill="#1a202c" font-family="serif">?</text><text x="0" y="16" text-anchor="middle" font-size="9" fill="#1a202c" font-style="italic">analytics?</text></g>
+  <g stroke="#94a3b8" stroke-width="1.2" fill="none" stroke-dasharray="3,3"><line x1="500" y1="385" x2="475" y2="325"/><line x1="500" y1="385" x2="475" y2="450"/></g>
+  <text x="488" y="392" font-size="22" font-weight="900" fill="#dc2626" text-anchor="middle">×</text>
+  <g transform="translate(280, 580)">
+    <ellipse cx="0" cy="-30" rx="70" ry="28" fill="#fff" stroke="#1a202c" stroke-width="1.5" filter="url(#thf-rough)"/>
+    <text x="0" y="-32" text-anchor="middle" font-size="11" font-style="italic" fill="#1a202c">"หลัง launch</text>
+    <text x="0" y="-19" text-anchor="middle" font-size="11" font-style="italic" fill="#1a202c">มีอะไรต่อ?"</text>
+    <path d="M -10 -10 L 0 0 L 5 -8 z" fill="#fff" stroke="#1a202c" stroke-width="1.2"/>
+    <circle cx="20" cy="20" r="14" fill="#fff" stroke="#1a202c" stroke-width="2" filter="url(#thf-rough)"/>
+    <circle cx="16" cy="17" r="1.5" fill="#1a202c"/><circle cx="24" cy="17" r="1.5" fill="#1a202c"/>
+    <path d="M 14 24 Q 20 26 26 24" stroke="#1a202c" stroke-width="1.4" fill="none"/>
+    <line x1="20" y1="34" x2="20" y2="80" stroke="#1a202c" stroke-width="2"/>
+    <line x1="20" y1="50" x2="3" y2="60" stroke="#1a202c" stroke-width="2"/>
+    <line x1="20" y1="50" x2="35" y2="42" stroke="#1a202c" stroke-width="2"/>
+    <circle cx="32" cy="20" r="3" fill="#fff" stroke="#1a202c" stroke-width="1.2"/>
+    <line x1="20" y1="80" x2="12" y2="105" stroke="#1a202c" stroke-width="2"/>
+    <line x1="20" y1="80" x2="28" y2="105" stroke="#1a202c" stroke-width="2"/>
+    <text x="20" y="120" text-anchor="middle" font-size="10" font-style="italic" fill="#475569">เภสัชกร</text>
+  </g>
+  <text x="1160" y="700" text-anchor="end" font-size="11" font-style="italic" fill="#94a3b8">DrugBox · by adisak_kob · drugboxcare.com</text>
+</svg>
