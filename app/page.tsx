@@ -24,22 +24,46 @@ export default function Home() {
           <p className="text-xs font-bold tracking-widest text-teal-700 uppercase mb-4">
             {t({ th: 'สวัสดีครับ', en: 'hello' })}
           </p>
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 leading-[1.05] tracking-tight">
-            {t({
-              th: 'ผมโกบ',
-              en: 'i’m kob',
-            })}
-          </h1>
+          {/* Hand-drawn cartoon by โจเตี๊ยว — replaces the placeholder
+              emoji. Decision (2026-05-09): the drawing has more personality
+              than the chick emoji and matches the casual tone we established.
+              File lives in /public/kob-illustration.jpg; if you swap it,
+              keep the same filename or update both this <img> and the alt
+              text. Credit line below the image is REQUIRED — this is the
+              artist's work, not mine. */}
+          <h1 className="sr-only">kob</h1>
+          <figure className="flex flex-col items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            {/* Line-art version of the original photo, generated via
+                Python+OpenCV (adaptive threshold → black lines, alpha
+                channel for paper). Bottom of the source had a baked-in
+                "เจ้าชายกบ" caption — that crop happens during the
+                line-art conversion, not via CSS. PNG is transparent so
+                the dot-grid behind shows through the lines, which makes
+                the hero feel more integrated. To swap the source: replace
+                /public/kob-illustration-line.png and keep the same path
+                here. The original photo is still at /kob-illustration.jpg
+                if you want to revert. */}
+            <img
+              src="/kob-illustration-line.png"
+              alt="kob — drawn by โจเตี๊ยว"
+              className="w-48 sm:w-64 h-auto select-none"
+              draggable={false}
+            />
+            <figcaption className="mt-2 text-[11px] text-gray-400 italic">
+              illustration by โจเตี๊ยว
+            </figcaption>
+          </figure>
           <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">
             {t({
-              th: 'เภสัชกรที่หลงเข้าวงการเขียน code มาได้สักพัก ตอนกลางวันยืนหน้าห้องยา ตอนกลางคืนนั่งเขียน Swift กับ TypeScript จนเช้า',
-              en: 'a hospital pharmacist who got pulled into building software. counter by day, Swift + TypeScript by night.',
+              th: 'เภสัชกรที่หลงเข้าวงการเขียน code มาได้สักพัก อยากทำอะไรที่มากกว่าการจ่ายยา DrugBox เป็นแอพแรก และแอพ MedSticker ที่กำลังทำอยู่',
+              en: 'a hospital pharmacist who got pulled into building software. wanted to do more than just dispense — DrugBox is the first app, MedSticker is what i\u2019m building next.',
             })}
           </p>
           <p className="mt-4 text-base text-gray-500">
             {t({
-              th: 'ที่นี่เป็นที่จดบันทึกสิ่งที่ทำ ที่คิด เจ็บปวดมา และอยากเล่าให้คนอื่นฟัง',
-              en: 'this is where i write down what i make, what i think, and what hurt while making it.',
+              th: 'ที่นี่เป็นที่จดบันทึกสิ่งที่ทำ ที่คิด และอยากเล่าให้ฟัง',
+              en: 'this is where i write down what i make, what i think, and what i feel like sharing.',
             })}
           </p>
 

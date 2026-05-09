@@ -12,6 +12,8 @@ type Project = {
   title: string;
   status: 'live' | 'pilot' | 'paused' | 'idea';
   href?: string;
+  /** Optional screenshot/diagram. Path is resolved from /public. */
+  image?: string;
   blurb: { th: string; en: string };
   tech: string[];
 };
@@ -27,7 +29,16 @@ const projects: Project[] = [
     },
     tech: ['SwiftUI', 'Next.js', 'Firebase', 'Cloud Functions', 'TypeScript'],
   },
-  // ใส่โปรเจ็กต์เก่า/ใหม่เพิ่มได้ที่นี่ (idea-stage ก็ได้ ไม่ต้องเสร็จก่อน)
+  {
+    title: 'MedSticker',
+    status: 'pilot',
+    image: '/medsticker-login.png',
+    blurb: {
+      th: 'ระบบออกฉลากยาอัตโนมัติ — ตัวที่กำลังทำต่อจาก DrugBox อยู่ในช่วง pilot ใช้งานจริงในห้องยา',
+      en: 'auto-print drug labels for pharmacy counters — the next thing i\u2019m building after DrugBox, currently piloting at a real counter.',
+    },
+    tech: ['SwiftUI', 'Firebase'],
+  },
 ];
 
 const statusBadge = (s: Project['status']) => {
@@ -69,37 +80,54 @@ export default function Projects() {
           return (
             <article
               key={p.title}
-              className="bg-white border border-stone-200 rounded-2xl p-6 hover:border-teal-300 transition-colors"
+              className="bg-white border border-stone-200 rounded-2xl overflow-hidden hover:border-teal-300 transition-colors"
             >
-              <div className="flex items-start justify-between gap-3 mb-2">
-                <h2 className="text-xl font-extrabold text-gray-900">{p.title}</h2>
-                <span
-                  className={`text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full ${badge.cls}`}
-                >
-                  {badge.label}
-                </span>
-              </div>
-              <p className="text-gray-700 leading-relaxed mb-4">{t(p.blurb)}</p>
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {p.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-[11px] font-semibold text-gray-600 bg-stone-100 px-2 py-0.5 rounded-md"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              {p.href && (
-                <a
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-semibold text-teal-700 hover:text-teal-900 underline-offset-4 hover:underline"
-                >
-                  {p.href.replace('https://', '')} →
-                </a>
+              {/* Optional screenshot — sits above the text, framed in
+                  off-white so it reads as a diagram/preview rather than
+                  a full-bleed banner. The phone-shape screenshot for
+                  MedSticker uses object-contain so we don't crop the
+                  device chrome. */}
+              {p.image && (
+                <div className="bg-stone-100 border-b border-stone-200 flex items-center justify-center py-6 px-4">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={p.image}
+                    alt={`${p.title} screenshot`}
+                    className="max-h-72 w-auto object-contain rounded-xl shadow-md"
+                  />
+                </div>
               )}
+              <div className="p-6">
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <h2 className="text-xl font-extrabold text-gray-900">{p.title}</h2>
+                  <span
+                    className={`text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full ${badge.cls}`}
+                  >
+                    {badge.label}
+                  </span>
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-4">{t(p.blurb)}</p>
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {p.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-[11px] font-semibold text-gray-600 bg-stone-100 px-2 py-0.5 rounded-md"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                {p.href && (
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-semibold text-teal-700 hover:text-teal-900 underline-offset-4 hover:underline"
+                  >
+                    {p.href.replace('https://', '')} →
+                  </a>
+                )}
+              </div>
             </article>
           );
         })}

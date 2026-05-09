@@ -14,7 +14,7 @@ export default function Header() {
     { href: '/pharmacy', label: { th: 'ยา', en: 'Pharmacy' } },
     { href: '/projects', label: { th: 'ผลงาน', en: 'Projects' } },
     { href: '/drugbox', label: { th: 'DrugBox', en: 'DrugBox' } },
-    { href: '/tech', label: { th: 'เทคนิค', en: 'Tech' } },
+    { href: '/tech', label: { th: 'Tech', en: 'Tech' } },
     { href: '/contact', label: { th: 'ติดต่อ', en: 'Contact' } },
   ];
 
@@ -22,7 +22,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-stone-50/80 border-b border-stone-200">
       <div className="max-w-5xl mx-auto px-5 py-3 flex items-center justify-between gap-4">
         <Link href="/" className="font-extrabold text-lg text-teal-700 tracking-tight">
-          kob
+          kob <span className="text-gray-400 font-normal">·</span>{' '}
+          <span className="font-thai">กบ</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1 text-sm">
