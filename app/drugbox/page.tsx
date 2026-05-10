@@ -15,6 +15,7 @@
 //   05-first-login-org-concept.svg — first-time login + org creation
 
 import { useLang } from '@/lib/lang';
+import Comments from '@/components/Comments';
 
 export default function DrugBoxGuide() {
   const { t } = useLang();
@@ -303,6 +304,8 @@ export default function DrugBoxGuide() {
           })}
         </p>
       </section>
+
+      <Comments />
     </div>
   );
 }

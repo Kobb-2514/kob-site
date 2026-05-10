@@ -7,6 +7,7 @@
 
 import Link from 'next/link';
 import { useLang } from '@/lib/lang';
+import Comments from '@/components/Comments';
 
 type Project = {
   title: string;
@@ -142,6 +143,8 @@ export default function Projects() {
           {t({ th: 'มี idea? มาคุยกัน', en: 'have an idea? let’s talk' })}
         </Link>
       </p>
+
+      <Comments />
     </div>
   );
 }

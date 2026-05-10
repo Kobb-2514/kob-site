@@ -10,6 +10,7 @@
 //   06-architecture-overview.svg  — Firebase stack overview
 
 import { useLang } from '@/lib/lang';
+import Comments from '@/components/Comments';
 
 export default function Tech() {
   const { t } = useLang();
@@ -140,6 +141,8 @@ export default function Tech() {
           </li>
         </ul>
       </section>
+
+      <Comments />
     </div>
   );
 }

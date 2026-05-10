@@ -10,6 +10,7 @@
 
 import Link from 'next/link';
 import { useLang } from '@/lib/lang';
+import Comments from '@/components/Comments';
 
 export default function Pharmacy() {
   const { t } = useLang();
@@ -84,6 +85,8 @@ export default function Pharmacy() {
           })}
         </p>
       </div>
+
+      <Comments />
     </div>
   );
 }
