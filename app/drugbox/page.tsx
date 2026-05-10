@@ -141,6 +141,30 @@ export default function DrugBoxGuide() {
         />
       </section>
 
+      {/* Section 3.25: Roles + permissions — diagram 08 (added 2026-05-10).
+          Sits between "first login" (which explains how orgs work) and
+          "adding boxes" (a write operation that depends on role).
+          Reading order: org concept → who's in the org → what they
+          can do → start using it. */}
+      <section className="mb-14">
+        <h2 className="text-2xl font-extrabold text-gray-900 mb-3">
+          {t({ th: 'สิทธิ์ของผู้ใช้ · 4 roles', en: 'roles \u00b7 who can do what' })}
+        </h2>
+        <p className="text-gray-700 leading-relaxed mb-6">
+          {t({
+            th: 'หลังสร้าง org แล้ว เภสัชหัวหน้า (Admin) เชิญทีมเข้ามาและกำหนด role ให้ตามหน้าที่จริง — Pharmacist/Nurse ทำงานประจำกล่องได้เต็ม, Viewer ดูได้อย่างเดียว (เช่น แพทย์ที่อยากเห็นสต็อกยา ER ก่อนสั่ง)',
+            en: 'after creating an org, the head pharmacist (Admin) invites teammates and assigns roles to match what they actually do — Pharmacist/Nurse can do all routine box work, Viewer is read-only (e.g. doctors who want to see ER stock before ordering).',
+          })}
+        </p>
+        <DiagramFrame
+          src="/diagrams/08-roles-permissions.svg"
+          alt={t({
+            th: 'ตารางเปรียบเทียบสิทธิ์ของแต่ละ role',
+            en: 'role permission comparison table',
+          })}
+        />
+      </section>
+
       {/* Section 3.5: Adding boxes — diagram 07 (added 2026-05-10) */}
       <section className="mb-14">
         <h2 className="text-2xl font-extrabold text-gray-900 mb-3">

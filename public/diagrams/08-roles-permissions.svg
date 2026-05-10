@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="rp-title rp-desc" font-family="'Itim', 'Comic Sans MS', 'Marker Felt', 'Sukhumvit Set', 'Sarabun', 'Tahoma', cursive, sans-serif" style="background:#ffffff;">
+  <title id="rp-title">DrugBox — สิทธิ์ของแต่ละ role (Admin / Pharmacist / Nurse / Viewer)</title>
+  <desc id="rp-desc">DrugBox มี 4 บทบาท: Admin จัดการทั้งหมด, Pharmacist และ Nurse ทำงานประจำกล่องยา, Viewer ดูได้อย่างเดียว — เปรียบเทียบสิทธิ์แต่ละ role ในตาราง</desc>
+  <defs>
+    <filter id="rp-rough" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="11" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5"/></filter>
+    <filter id="rp-rough-light" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="6" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2"/></filter>
+  </defs>
+
+  <!-- Header -->
+  <g transform="translate(60, 60)">
+    <text font-size="32" font-weight="800" fill="#1a202c"><tspan>สิทธิ์ของผู้ใช้ ·</tspan> <tspan fill="#0d9488">4 roles</tspan></text>
+    <rect x="-4" y="14" width="100" height="14" fill="#fde68a" filter="url(#rp-rough)" opacity="0.8"/>
+    <text y="32" font-size="13" fill="#94a3b8" font-style="italic">Who can do what — admin, pharmacist, nurse, viewer</text>
+    <text y="58" font-size="14" fill="#475569" font-style="italic">เภสัชกรหัวหน้า invite ทีมเข้ามา → กำหนด role ตามหน้าที่จริง</text>
+  </g>
+
+  <!-- Rx app icon -->
+  <g transform="translate(1100, 70)" filter="url(#rp-rough-light)">
+    <rect x="-30" y="-30" width="60" height="60" rx="12" fill="#1e3a8a" stroke="#1a202c" stroke-width="2"/>
+    <rect x="-17" y="-7" width="34" height="24" rx="2" fill="#ffffff"/>
+    <path d="M -8 -7 L -8 -12 Q -8 -15 -5 -15 L 5 -15 Q 8 -15 8 -12 L 8 -7" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="0" y="11" text-anchor="middle" font-size="17" font-weight="900" font-style="italic" fill="#1e3a8a" font-family="Georgia, serif">Rx</text>
+  </g>
+
+  <!-- Role headers (4 columns) -->
+  <!-- Admin -->
+  <g transform="translate(420, 145)">
+    <rect x="0" y="0" width="170" height="80" rx="12" fill="#fce7f3" stroke="#1a202c" stroke-width="2.2" filter="url(#rp-rough)"/>
+    <text x="85" y="30" text-anchor="middle" font-size="22">👑</text>
+    <text x="85" y="55" text-anchor="middle" font-size="16" font-weight="800" fill="#1a202c">Admin</text>
+    <text x="85" y="72" text-anchor="middle" font-size="10" fill="#475569" font-style="italic">เภสัชหัวหน้า · เจ้าของ org</text>
+  </g>
+  <!-- Pharmacist -->
+  <g transform="translate(610, 145)">
+    <rect x="0" y="0" width="170" height="80" rx="12" fill="#ccfbf1" stroke="#1a202c" stroke-width="2.2" filter="url(#rp-rough)"/>
+    <text x="85" y="30" text-anchor="middle" font-size="22">💊</text>
+    <text x="85" y="55" text-anchor="middle" font-size="16" font-weight="800" fill="#1a202c">Pharmacist</text>
+    <text x="85" y="72" text-anchor="middle" font-size="10" fill="#475569" font-style="italic">เภสัชกรประจำ</text>
+  </g>
+  <!-- Nurse -->
+  <g transform="translate(800, 145)">
+    <rect x="0" y="0" width="170" height="80" rx="12" fill="#dbeafe" stroke="#1a202c" stroke-width="2.2" filter="url(#rp-rough)"/>
+    <text x="85" y="32" text-anchor="middle" font-size="22">🩺</text>
+    <text x="85" y="55" text-anchor="middle" font-size="16" font-weight="800" fill="#1a202c">Nurse</text>
+    <text x="85" y="72" text-anchor="middle" font-size="10" fill="#475569" font-style="italic">พยาบาล · ทีมห้องฉุกเฉิน</text>
+  </g>
+  <!-- Viewer -->
+  <g transform="translate(990, 145)">
+    <rect x="0" y="0" width="170" height="80" rx="12" fill="#e2e8f0" stroke="#1a202c" stroke-width="2.2" filter="url(#rp-rough)"/>
+    <text x="85" y="30" text-anchor="middle" font-size="22">👀</text>
+    <text x="85" y="55" text-anchor="middle" font-size="16" font-weight="800" fill="#1a202c">Viewer</text>
+    <text x="85" y="72" text-anchor="middle" font-size="10" fill="#475569" font-style="italic">read-only · เช่น แพทย์</text>
+  </g>
+
+  <!-- Permission rows -->
+  <g font-size="13" fill="#1a202c">
+    <!-- Row 1: View boxes & data -->
+    <g transform="translate(60, 250)">
+      <text y="22" font-weight="600">📖 ดูข้อมูลกล่อง · สถิติ · log</text>
+      <text x="505" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="695" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="885" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="1075" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <line x1="-4" y1="38" x2="1100" y2="38" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2,3"/>
+    </g>
+    <!-- Row 2: Inspect boxes -->
+    <g transform="translate(60, 295)">
+      <text y="22" font-weight="600">✓ ตรวจกล่อง (inspection round)</text>
+      <text x="505" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="695" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="885" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="1075" y="22" text-anchor="middle" font-size="20" fill="#94a3b8" font-weight="900">—</text>
+      <line x1="-4" y1="38" x2="1100" y2="38" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2,3"/>
+    </g>
+    <!-- Row 3: Box movement -->
+    <g transform="translate(60, 340)">
+      <text y="22" font-weight="600">🔄 สลับ · รับ · จ่าย กล่อง</text>
+      <text x="505" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="695" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="885" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="1075" y="22" text-anchor="middle" font-size="20" fill="#94a3b8" font-weight="900">—</text>
+      <line x1="-4" y1="38" x2="1100" y2="38" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2,3"/>
+    </g>
+    <!-- Row 4: Edit drugs in box -->
+    <g transform="translate(60, 385)">
+      <text y="22" font-weight="600">💊 แก้ยาในกล่อง · บันทึก transaction</text>
+      <text x="505" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="695" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="885" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="1075" y="22" text-anchor="middle" font-size="20" fill="#94a3b8" font-weight="900">—</text>
+      <line x1="-4" y1="38" x2="1100" y2="38" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2,3"/>
+    </g>
+    <!-- Row 5: Add new box -->
+    <g transform="translate(60, 430)">
+      <text y="22" font-weight="600">📦 เพิ่ม / ลบ กล่องใหม่</text>
+      <text x="505" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="695" y="22" text-anchor="middle" font-size="20" fill="#94a3b8" font-weight="900">—</text>
+      <text x="885" y="22" text-anchor="middle" font-size="20" fill="#94a3b8" font-weight="900">—</text>
+      <text x="1075" y="22" text-anchor="middle" font-size="20" fill="#94a3b8" font-weight="900">—</text>
+      <line x1="-4" y1="38" x2="1100" y2="38" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2,3"/>
+    </g>
+    <!-- Row 6: Manage members -->
+    <g transform="translate(60, 475)">
+      <text y="22" font-weight="600">👥 จัดการสมาชิก (เชิญ · เปลี่ยน role · ลบ)</text>
+      <text x="505" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="695" y="22" text-anchor="middle" font-size="20" fill="#94a3b8" font-weight="900">—</text>
+      <text x="885" y="22" text-anchor="middle" font-size="20" fill="#94a3b8" font-weight="900">—</text>
+      <text x="1075" y="22" text-anchor="middle" font-size="20" fill="#94a3b8" font-weight="900">—</text>
+      <line x1="-4" y1="38" x2="1100" y2="38" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2,3"/>
+    </g>
+    <!-- Row 7: Org settings (catalog, types, locations) -->
+    <g transform="translate(60, 520)">
+      <text y="22" font-weight="600">⚙️ ตั้งค่า org · catalog · ประเภทกล่อง</text>
+      <text x="505" y="22" text-anchor="middle" font-size="20" fill="#15803d" font-weight="900">✓</text>
+      <text x="695" y="22" text-anchor="middle" font-size="20" fill="#94a3b8" font-weight="900">—</text>
+      <text x="885" y="22" text-anchor="middle" font-size="20" fill="#94a3b8" font-weight="900">—</text>
+      <text x="1075" y="22" text-anchor="middle" font-size="20" fill="#94a3b8" font-weight="900">—</text>
+      <line x1="-4" y1="38" x2="1100" y2="38" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2,3"/>
+    </g>
+  </g>
+
+  <!-- Notes / clarification cards -->
+  <g transform="translate(60, 600)">
+    <rect x="0" y="0" width="540" height="120" rx="14" fill="#fef9c3" stroke="#1a202c" stroke-width="1.8" filter="url(#rp-rough-light)"/>
+    <text x="20" y="28" font-size="14" font-weight="800" fill="#1a202c">💡 ทั่วไปเลือก role ยังไง</text>
+    <text x="20" y="50" font-size="11.5" fill="#475569">· เภสัชหัวหน้า → <tspan font-weight="700">Admin</tspan> (คน 1-2 คนต่อ org)</text>
+    <text x="20" y="68" font-size="11.5" fill="#475569">· เภสัชประจำ + ทีมห้องฉุกเฉินที่ทำ tx → <tspan font-weight="700">Pharmacist / Nurse</tspan></text>
+    <text x="20" y="86" font-size="11.5" fill="#475569">· แพทย์ที่อยากดูข้อมูลแต่ไม่แก้ → <tspan font-weight="700">Viewer</tspan></text>
+    <text x="20" y="104" font-size="10" fill="#94a3b8" font-style="italic">เปลี่ยน role ทีหลังได้ — Admin เข้า Settings → จัดการสมาชิก</text>
+  </g>
+  <g transform="translate(620, 600)">
+    <rect x="0" y="0" width="540" height="120" rx="14" fill="#e0e7ff" stroke="#1a202c" stroke-width="1.8" filter="url(#rp-rough-light)"/>
+    <text x="20" y="28" font-size="14" font-weight="800" fill="#1a202c">🔒 ทำไม Viewer มีอยู่</text>
+    <text x="20" y="50" font-size="11.5" fill="#475569">บางคนต้อง <tspan font-weight="700">เห็นข้อมูล</tspan> แต่ไม่ควรแก้ — เช่น</text>
+    <text x="20" y="68" font-size="11.5" fill="#475569">· แพทย์ที่อยากดูสต็อกยา emergency ก่อนสั่ง</text>
+    <text x="20" y="86" font-size="11.5" fill="#475569">· ผู้บริหารโรงพยาบาลที่ดู report เป็นรายเดือน</text>
+    <text x="20" y="104" font-size="10" fill="#94a3b8" font-style="italic">Viewer เห็นทุกอย่าง แต่ปุ่ม "แก้ไข" จะถูกซ่อน — กันแก้พลาด</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="1160" y="745" text-anchor="end" font-size="11" font-style="italic" fill="#94a3b8">DrugBox · by adisak_kob · drugboxcare.com</text>
+</svg>
