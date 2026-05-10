@@ -231,6 +231,30 @@ export default function DrugBoxGuide() {
         />
       </section>
 
+      {/* Section 4.75: Install paths — diagram 09 (added 2026-05-10).
+          After "iOS + Web parity" reassures readers that both
+          platforms work, this section answers the obvious follow-up:
+          "ok then how do i actually get it on my device?". Three
+          paths covered + iPhone PWA fallback note at the bottom. */}
+      <section className="mb-14">
+        <h2 className="text-2xl font-extrabold text-gray-900 mb-3">
+          {t({ th: 'ดาวน์โหลด · ติดตั้ง · 3 ช่องทาง', en: 'download \u00b7 install \u00b7 three paths' })}
+        </h2>
+        <p className="text-gray-700 leading-relaxed mb-6">
+          {t({
+            th: 'ติดตั้งได้ตามอุปกรณ์ที่ใช้ — iPhone โหลด native app จาก App Store, Android ติดตั้ง PWA ผ่าน Chrome, คอม/แล็ปท็อปใช้ผ่าน browser ได้เลย หรือกด install เป็นแอปก็ได้',
+            en: 'install based on your device — iPhone gets the native app from the App Store, Android installs a PWA via Chrome, desktop just opens it in a browser (or installs as an app, optional).',
+          })}
+        </p>
+        <DiagramFrame
+          src="/diagrams/09-install-paths.svg"
+          alt={t({
+            th: 'แผนภาพ 3 ช่องทางดาวน์โหลด: iPhone App Store, Android PWA, Desktop Web',
+            en: 'three install paths — iPhone App Store, Android PWA, Desktop Web',
+          })}
+        />
+      </section>
+
       {/* Section 5: How to start */}
       <section className="mb-12">
         <h2 className="text-2xl font-extrabold text-gray-900 mb-3">
@@ -284,10 +308,27 @@ export default function DrugBoxGuide() {
 }
 
 function DiagramFrame({ src, alt }: { src: string; alt: string }) {
+  // 2026-05-10 (kob): wrap the image in an <a> that opens the SVG in a
+  // new tab. Reason: iOS Safari pre-rasterizes <img> SVGs to a bitmap
+  // and uses bitmap interpolation when the user pinch-zooms — looks
+  // blurry. Opening the SVG file directly in a new tab lets Safari
+  // render it as a real vector, so pinch-zoom stays sharp. Desktop
+  // browsers don't have this quirk but the link is harmless there.
   return (
     <figure className="bg-white border border-stone-200 rounded-2xl p-3 sm:p-5 overflow-hidden">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt={alt} className="w-full h-auto block" />
+      <a
+        href={src}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Tap to open full size — iPhone users get sharp pinch-zoom this way"
+        className="block group"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt={alt} className="w-full h-auto block" />
+        <span className="block text-[10px] text-gray-400 italic text-right mt-2 group-hover:text-teal-600 transition-colors">
+          tap to open full size ↗
+        </span>
+      </a>
     </figure>
   );
 }
