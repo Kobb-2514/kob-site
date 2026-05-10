@@ -54,10 +54,26 @@ export default function Home() {
               illustration by โจเตี๊ยว
             </figcaption>
           </figure>
+          {/* Thai line-break fix: "มากกว่า" gets split as "มากก|ว่า" by
+              Chrome's Thai word breaker (it sees the double ก and stops
+              there). Wrapping the phrase in <span class=whitespace-nowrap>
+              keeps "มากกว่าการจ่ายยา" together so the line break falls
+              on the space before DrugBox instead. EN doesn't need this
+              because spaces give natural break points already. */}
           <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">
             {t({
-              th: 'หลงเข้าวงการเขียน code มาได้สักพัก (ตอนนี้ Vibe Coding เป็นหลัก) อยากทำอะไรที่มากกว่าการจ่ายยา DrugBox เป็นแอพแรก และ MedSticker ที่กำลังทำอยู่',
-              en: 'got pulled into writing code a while back (mostly vibe-coding these days). wanted to do more than just dispense — DrugBox is the first app, MedSticker is the one i\u2019m building next.',
+              th: 'หลงเข้าวงการเขียน code มาได้สักพัก (ตอนนี้ Vibe Coding เป็นหลัก) อยากทำอะไรที่',
+              en: 'got pulled into writing code a while back (mostly vibe-coding these days). wanted to do',
+            })}
+            <span className="whitespace-nowrap">
+              {t({
+                th: 'มากกว่าการจ่ายยา',
+                en: ' more than just dispense',
+              })}
+            </span>
+            {t({
+              th: ' DrugBox เป็นแอพแรก และ MedSticker ที่กำลังทำอยู่',
+              en: ' — DrugBox is the first app, MedSticker is the one i\u2019m building next.',
             })}
           </p>
           <p className="mt-4 text-base text-gray-500">
