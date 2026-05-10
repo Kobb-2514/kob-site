@@ -64,7 +64,7 @@ export default function DrugBoxGuide() {
         <div className="space-y-4 text-gray-700 leading-relaxed">
           <p>
             {t({
-              th: 'รพ. ส่วนใหญ่จัดการกล่องยาฉุกเฉินด้วย Excel + กระดาษ + ความจำของเภสัชคนนึง พอคนนั้นย้ายงาน ระบบก็พังตาม',
+              th: 'รพ. ส่วนใหญ่จัดการกล่องยาฉุกเฉินด้วย Excel + กระดาษ + มีเภสัชที่รับผิดชอบไม่กี่คน พอคนนั้นย้ายงาน ระบบก็อาจพังตาม',
               en: 'most hospitals manage emergency drug boxes with Excel, paper, and one pharmacist’s memory. when that person leaves, the system falls apart.',
             })}
           </p>
@@ -75,6 +75,30 @@ export default function DrugBoxGuide() {
             })}
           </p>
         </div>
+      </section>
+
+      {/* Section 1.5: Pharmacist's view — diagram 01 (added 2026-05-10).
+          Sits right after "why" and before the deeper dives because it
+          frames the work from the user's perspective: a pharmacist
+          who walks up to a box, opens the app, and sees the same
+          state every teammate sees. */}
+      <section className="mb-14">
+        <h2 className="text-2xl font-extrabold text-gray-900 mb-3">
+          {t({ th: 'มุมมองของเภสัช · Pharmacist view', en: 'pharmacist\u2019s view' })}
+        </h2>
+        <p className="text-gray-700 leading-relaxed mb-6">
+          {t({
+            th: 'งานเภสัชประจำกล่องยา 4 อย่าง — เปิดดูสถานะ, สลับ/รับ/จ่าย, ตรวจรอบ, จัดการยาในกล่อง — ทำได้บนแอป iOS หรือเว็บ ทุกคนในทีมเห็นข้อมูลเดียวกันแบบ realtime',
+            en: 'four routine pharmacist tasks around a drug box — viewing status, swap/receive/dispatch, inspection rounds, and managing items inside a box — all on iOS or web, with everyone seeing the same realtime state.',
+          })}
+        </p>
+        <DiagramFrame
+          src="/diagrams/01-pharmacist-view.svg"
+          alt={t({
+            th: 'แผนภาพมุมมองและงานหลักของเภสัชต่อกล่องยา',
+            en: 'Pharmacist view — main tasks around a drug box',
+          })}
+        />
       </section>
 
       {/* Section 2: Box Movement (heart of app) — diagram 02 */}
@@ -117,6 +141,26 @@ export default function DrugBoxGuide() {
         />
       </section>
 
+      {/* Section 3.5: Adding boxes — diagram 07 (added 2026-05-10) */}
+      <section className="mb-14">
+        <h2 className="text-2xl font-extrabold text-gray-900 mb-3">
+          {t({ th: 'เพิ่มกล่องยา · 2 วิธี', en: 'adding boxes · two ways' })}
+        </h2>
+        <p className="text-gray-700 leading-relaxed mb-6">
+          {t({
+            th: 'หลัง join องค์กรแล้ว เริ่มเพิ่มกล่องได้ 2 ทาง — กรอกเองทีละกล่องสำหรับ รพ. ที่เพิ่งเริ่ม หรือ Import จาก CSV ถ้ามีข้อมูลใน Excel/Sheets อยู่แล้วและอยากย้ายเข้ามาแบบ bulk',
+            en: 'after joining the org, there are two ways to add boxes — type them in one-by-one (good for fresh setups), or import from a CSV (faster if you already have data in Excel/Sheets).',
+          })}
+        </p>
+        <DiagramFrame
+          src="/diagrams/07-add-box-flows.svg"
+          alt={t({
+            th: 'แผนภาพการเพิ่มกล่องยา 2 วิธี: กรอกเอง vs Import CSV',
+            en: 'Adding boxes diagram — manual entry vs CSV import',
+          })}
+        />
+      </section>
+
       {/* Section 4: Notification timeline — diagram 04 */}
       <section className="mb-14">
         <h2 className="text-2xl font-extrabold text-gray-900 mb-3">
@@ -133,6 +177,32 @@ export default function DrugBoxGuide() {
           alt={t({
             th: 'ตารางเวลาการแจ้งเตือนรายวัน',
             en: 'notification timeline diagram',
+          })}
+        />
+      </section>
+
+      {/* Section 4.5: iOS + Web parity — diagram 03 (added 2026-05-10).
+          Comes near the end as a reassurance: "you saw all those
+          flows, btw they all work on both platforms with the same
+          data". /tech page also uses this diagram, but the message
+          there is dev-flavoured (parity-strategy) — here it's
+          end-user-flavoured (one team, two devices). Same SVG, two
+          framings; the duplication is intentional. */}
+      <section className="mb-14">
+        <h2 className="text-2xl font-extrabold text-gray-900 mb-3">
+          {t({ th: 'ใช้ได้ทั้ง iOS และเว็บ', en: 'works on iOS and the web' })}
+        </h2>
+        <p className="text-gray-700 leading-relaxed mb-6">
+          {t({
+            th: 'ทุก feature ทำงานเหมือนกันทั้งบนมือถือและคอม — เภสัชหัวหน้าใช้เว็บที่หน้าจอใหญ่, เภสัชเดินกล่องใช้ iOS ในมือ ข้อมูลที่เห็นคือชุดเดียวกัน sync ผ่าน Firestore',
+            en: 'every feature works the same on both mobile and desktop — head pharmacists use the wider web view, while pharmacists out on rounds use iOS in hand. same data either way, synced through Firestore.',
+          })}
+        </p>
+        <DiagramFrame
+          src="/diagrams/03-ios-vs-web-parity.svg"
+          alt={t({
+            th: 'แผนภาพ feature parity ระหว่าง iOS กับเว็บ',
+            en: 'iOS vs Web feature parity diagram',
           })}
         />
       </section>
