@@ -59,6 +59,20 @@ export default function DrugBoxGuide() {
           >
              {t({ th: 'iOS · App Store', en: 'iOS · App Store' })}
           </a>
+          {/* Full manual on Google Docs (2026-05-13). The page below
+              this hero is a hand-drawn visual guide; the Google Doc is
+              the long-form companion with step-by-step instructions
+              for admins / pharmacists / nurses. Kept as a third pill
+              instead of a sub-text link so people scanning the hero
+              can spot it as a peer entry point alongside web + iOS. */}
+          <a
+            href="https://docs.google.com/document/d/17WZWhPx0DHzyHCFchBwbjAwZlPjqxZtxUCF1PrVSXDc/edit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white hover:bg-stone-100 border border-stone-300 text-gray-700 px-4 py-2 rounded-full font-semibold text-sm transition-colors"
+          >
+            📖 {t({ th: 'คู่มือฉบับเต็ม', en: 'full manual' })} ↗
+          </a>
         </div>
       </header>
 
