@@ -59,14 +59,16 @@ export default function DrugBoxGuide() {
           >
              {t({ th: 'iOS · App Store', en: 'iOS · App Store' })}
           </a>
-          {/* Full manual on Google Docs (2026-05-13). The page below
-              this hero is a hand-drawn visual guide; the Google Doc is
-              the long-form companion with step-by-step instructions
-              for admins / pharmacists / nurses. Kept as a third pill
-              instead of a sub-text link so people scanning the hero
-              can spot it as a peer entry point alongside web + iOS. */}
+          {/* Full manual hosted on Google Drive (2026-05-13). The page
+              below this hero is the hand-drawn visual guide; the Drive
+              file is the long-form companion with step-by-step
+              instructions for admins / pharmacists / nurses. Kept as
+              a third pill alongside web + iOS so people scanning the
+              hero can spot it as a peer entry point. Original link
+              had an `fbclid` tracking param from a Facebook share —
+              stripped that so the URL stays canonical. */}
           <a
-            href="https://docs.google.com/document/d/17WZWhPx0DHzyHCFchBwbjAwZlPjqxZtxUCF1PrVSXDc/edit"
+            href="https://drive.google.com/file/d/1oqWfcdEWyPCYbmyc2UroNxV5vjgBLK54/view"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-white hover:bg-stone-100 border border-stone-300 text-gray-700 px-4 py-2 rounded-full font-semibold text-sm transition-colors"
