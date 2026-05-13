@@ -41,12 +41,17 @@ export default function Header() {
     setDrawerOpen(false);
   }, [pathname]);
 
+  // 2026-05-13 (#156): Trimmed nav to 4 items for the Facebook launch
+  // share — wanted visitors to focus on DrugBox without competing
+  // links. /projects and /tech routes still exist (typed URLs work);
+  // their nav entries are restored as soon as there's more content
+  // ready to surface. Re-enable by un-commenting below.
   const links: { href: string; label: { th: string; en: string } }[] = [
     { href: '/about', label: { th: 'เกี่ยวกับ', en: 'About' } },
     { href: '/pharmacy', label: { th: 'ยา', en: 'Pharmacy' } },
-    { href: '/projects', label: { th: 'ผลงาน', en: 'Projects' } },
+    // { href: '/projects', label: { th: 'ผลงาน', en: 'Projects' } },
     { href: '/drugbox', label: { th: 'DrugBox', en: 'DrugBox' } },
-    { href: '/tech', label: { th: 'Tech', en: 'Tech' } },
+    // { href: '/tech', label: { th: 'Tech', en: 'Tech' } },
     { href: '/contact', label: { th: 'ติดต่อ', en: 'Contact' } },
   ];
 

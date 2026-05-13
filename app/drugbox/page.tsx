@@ -46,13 +46,18 @@ export default function DrugBoxGuide() {
           >
             {t({ th: 'เปิดเว็บแอป', en: 'open web app' })} →
           </a>
+          {/* App Store link (replaced TestFlight 2026-05-13 after v1.2
+              Build 15 went live). Apple ID 6764796860 — taking the
+              region-free `/app/id…` form so Apple redirects the visitor
+              into their own country's App Store. If we ever pin to a
+              region, use /th/ for Thai. */}
           <a
-            href="https://testflight.apple.com/join/AyW6s88K"
+            href="https://apps.apple.com/app/id6764796860"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-white hover:bg-stone-100 border border-stone-300 text-gray-700 px-4 py-2 rounded-full font-semibold text-sm transition-colors"
           >
-            iOS · TestFlight
+             {t({ th: 'iOS · App Store', en: 'iOS · App Store' })}
           </a>
         </div>
       </header>

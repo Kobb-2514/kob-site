@@ -62,8 +62,8 @@ export default function Home() {
               because spaces give natural break points already. */}
           <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">
             {t({
-              th: 'หลงเข้าวงการเขียน code มาได้สักพัก (ตอนนี้ Vibe Coding เป็นหลัก) อยากทำอะไรที่',
-              en: 'got pulled into writing code a while back (mostly vibe-coding these days). wanted to do',
+              th: 'เข้าวงการเขียน code มาได้สักพัก (ตอนนี้ Vibe Coding เป็นหลัก) อยากทำอะไรที่',
+              en: 'got into writing code a while back (mostly vibe-coding these days). wanted to do',
             })}
             <span className="whitespace-nowrap">
               {t({
@@ -100,53 +100,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What's here */}
-      <section className="max-w-5xl mx-auto px-5 pt-20 pb-12">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">
-          {t({ th: 'ที่นี่มีอะไรบ้าง', en: 'what’s here' })}
-        </h2>
-        <p className="text-gray-500 text-sm mb-10">
-          {t({
-            th: 'หน้าหลักๆ 4 อย่าง — เลือกเปิดอ่านตามใจ',
-            en: 'four main rooms. open whichever interests you.',
-          })}
-        </p>
+      {/* "What's here" — hidden 2026-05-13 before the Facebook launch
+          share. Plan is to bring it back once there are more rooms /
+          fresher content to point at; the JSX + RoomCard usages below
+          stay intact so re-enabling is a one-line uncomment.
+          Wrapping with `{false && (...)}` rather than deleting keeps
+          the diff tiny and the section trivially recoverable. */}
+      {false && (
+        <section className="max-w-5xl mx-auto px-5 pt-20 pb-12">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">
+            {t({ th: 'ที่นี่มีอะไรบ้าง', en: 'what’s here' })}
+          </h2>
+          <p className="text-gray-500 text-sm mb-10">
+            {t({
+              th: 'หน้าหลักๆ 4 อย่าง — เลือกเปิดอ่านตามใจ',
+              en: 'four main rooms. open whichever interests you.',
+            })}
+          </p>
 
-        <div className="grid sm:grid-cols-2 gap-4">
-          <RoomCard
-            href="/about"
-            title={{ th: 'เกี่ยวกับผม', en: 'about me' }}
-            blurb={{
-              th: 'เส้นทางจากเภสัชสู่ dev — ทำไมเภสัชคนนึงถึงนั่งเขียน code ตอนตี 3',
-              en: 'pharmacist → dev — why a pharmacy graduate ends up writing code at 3am.',
-            }}
-          />
-          <RoomCard
-            href="/pharmacy"
-            title={{ th: 'มุมมองด้านยา', en: 'pharmacy thoughts' }}
-            blurb={{
-              th: 'งานเภสัชที่คนนอกวงการอาจไม่เคยเห็น + ทำไมยาในกล่องฉุกเฉินถึงน่าสนใจ',
-              en: 'inside-pharmacy notes you don’t usually see, plus why an emergency drug box is more interesting than it sounds.',
-            }}
-          />
-          <RoomCard
-            href="/drugbox"
-            title={{ th: 'DrugBox · คู่มือ', en: 'DrugBox · guide' }}
-            blurb={{
-              th: 'แอปจัดการกล่องยาฉุกเฉินที่ทำเอง — ใช้ยังไง + ทำไมต้องมี',
-              en: 'the emergency drug box app i built — how to use it, and why it exists.',
-            }}
-          />
-          <RoomCard
-            href="/tech"
-            title={{ th: 'เทคนิค', en: 'tech' }}
-            blurb={{
-              th: 'สำหรับ dev ด้วยกัน — stack, architecture, อะไรเวิร์ค อะไรไม่เวิร์ค',
-              en: 'for fellow devs — stack, architecture, what worked, what didn’t.',
-            }}
-          />
-        </div>
-      </section>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <RoomCard
+              href="/about"
+              title={{ th: 'เกี่ยวกับผม', en: 'about me' }}
+              blurb={{
+                th: 'เส้นทางจากเภสัชสู่ dev — ทำไมเภสัชคนนึงถึงนั่งเขียน code ตอนตี 3',
+                en: 'pharmacist → dev — why a pharmacy graduate ends up writing code at 3am.',
+              }}
+            />
+            <RoomCard
+              href="/pharmacy"
+              title={{ th: 'มุมมองด้านยา', en: 'pharmacy thoughts' }}
+              blurb={{
+                th: 'งานเภสัชที่คนนอกวงการอาจไม่เคยเห็น + ทำไมยาในกล่องฉุกเฉินถึงน่าสนใจ',
+                en: 'inside-pharmacy notes you don’t usually see, plus why an emergency drug box is more interesting than it sounds.',
+              }}
+            />
+            <RoomCard
+              href="/drugbox"
+              title={{ th: 'DrugBox · คู่มือ', en: 'DrugBox · guide' }}
+              blurb={{
+                th: 'แอปจัดการกล่องยาฉุกเฉินที่ทำเอง — ใช้ยังไง + ทำไมต้องมี',
+                en: 'the emergency drug box app i built — how to use it, and why it exists.',
+              }}
+            />
+            <RoomCard
+              href="/tech"
+              title={{ th: 'เทคนิค', en: 'tech' }}
+              blurb={{
+                th: 'สำหรับ dev ด้วยกัน — stack, architecture, อะไรเวิร์ค อะไรไม่เวิร์ค',
+                en: 'for fellow devs — stack, architecture, what worked, what didn’t.',
+              }}
+            />
+          </div>
+        </section>
+      )}
 
       {/* Currently shipping */}
       <section className="max-w-5xl mx-auto px-5 py-12">
