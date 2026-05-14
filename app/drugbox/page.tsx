@@ -318,12 +318,12 @@ export default function DrugBoxGuide() {
             })}
           </li>
         </ol>
-        <p className="mt-6 text-sm text-gray-500 italic">
-          {t({
-            th: 'ฟรีตลอดช่วง pilot — ติดต่อมาผ่านหน้า contact ได้ถ้ามีคำถาม',
-            en: 'free during pilot — reach out via contact if you have questions.',
-          })}
-        </p>
+        {/* "ฟรีตลอดช่วง pilot — ติดต่อมาผ่านหน้า contact"
+            removed 2026-05-13 after the App Store launch — the "pilot"
+            framing no longer matches the public-release reality, and
+            /contact is hidden from nav so pointing at it from here
+            felt like a dead end. Footer Email link is the canonical
+            way to reach kob now. */}
       </section>
 
       <Comments />
