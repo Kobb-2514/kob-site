@@ -41,19 +41,16 @@ export default function Header() {
     setDrawerOpen(false);
   }, [pathname]);
 
-  // 2026-05-13 (#156): Trimmed nav for the Facebook launch share —
-  // wanted visitors to focus on DrugBox without competing links.
-  // /projects, /tech, /contact routes still exist (typed URLs and
-  // footer links work); the nav entries return as soon as there's
-  // more content / a real reason to surface them. Re-enable by
+  // 2026-05-13 (#156): Trimmed nav down to a single entry for the
+  // Facebook launch share. Goal is to point everyone who lands here
+  // straight at /drugbox without sidebar distractions. /about,
+  // /pharmacy, /projects, /tech, /contact routes still exist (typed
+  // URLs and footer links work); their nav entries will come back as
+  // each room gets fresher content worth showing off. Re-enable by
   // un-commenting below.
-  //
-  // /contact was hidden too because the page is a single email + GitHub
-  // link, and the footer already exposes both at every page. The nav
-  // pill felt redundant.
   const links: { href: string; label: { th: string; en: string } }[] = [
-    { href: '/about', label: { th: 'เกี่ยวกับ', en: 'About' } },
-    { href: '/pharmacy', label: { th: 'ยา', en: 'Pharmacy' } },
+    // { href: '/about', label: { th: 'เกี่ยวกับ', en: 'About' } },
+    // { href: '/pharmacy', label: { th: 'ยา', en: 'Pharmacy' } },
     // { href: '/projects', label: { th: 'ผลงาน', en: 'Projects' } },
     { href: '/drugbox', label: { th: 'DrugBox', en: 'DrugBox' } },
     // { href: '/tech', label: { th: 'Tech', en: 'Tech' } },

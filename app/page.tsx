@@ -83,6 +83,12 @@ export default function Home() {
             })}
           </p>
 
+          {/* Hero CTAs trimmed to a single button for the Facebook launch
+              share (2026-05-13) — wanted visitors to land on /drugbox
+              without competing options. The 'รู้จักผมก่อน' (about me)
+              secondary pill is hidden, not removed, so it can come
+              back once /about gets more content worth surfacing.
+              Re-enable by un-commenting the second <Link> below. */}
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/drugbox"
@@ -90,12 +96,12 @@ export default function Home() {
             >
               {t({ th: 'ดู DrugBox', en: 'see DrugBox' })} →
             </Link>
-            <Link
+            {/* <Link
               href="/about"
               className="inline-flex items-center gap-2 bg-white hover:bg-stone-100 border border-stone-300 text-gray-700 px-5 py-2.5 rounded-full font-semibold text-sm transition-colors"
             >
               {t({ th: 'รู้จักผมก่อน', en: 'about me' })}
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
